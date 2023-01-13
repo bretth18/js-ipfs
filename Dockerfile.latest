@@ -20,11 +20,12 @@ RUN jsipfs init
 RUN jsipfs version
 
 # Allow connections from any host
-RUN sed -i.bak "s/127.0.0.1/0.0.0.0/g" $IPFS_PATH/config
+RUN sed -i.bak "s/0.0.0.1/0.0.0.0/g" $IPFS_PATH/config
 
 EXPOSE 4002
 EXPOSE 4003
 EXPOSE 5002
 EXPOSE 9090
+EXPOSE 5001
 
 CMD jsipfs daemon
